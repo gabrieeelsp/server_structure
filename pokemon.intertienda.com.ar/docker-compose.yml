@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx
+    container_name: ${CONTAINER_NAME}
+#    ports:
+#      - ${PORT}:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./src:/usr/share/nginx/html
+    networks:
+      proxy_network:
+        ipv4_address: ${IPV4}
+
+networks:
+  proxy_network:
+    name: nginx_proxy_network
+    external: true

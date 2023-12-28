@@ -1,0 +1,16 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    # Esta configuración manejará todas las solicitudes que no coincidan
+    # con ningún otro servidor configurado en NGINX.
+
+    location / {
+        # Ruta al contenido por defecto que deseas mostrar
+        # Puede ser una página HTML, un mensaje, etc.
+        root /usr/share/nginx/html;
+        index index.html;
+        # Otras configuraciones necesarias...
+    }
+}
+
